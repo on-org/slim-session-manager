@@ -77,7 +77,7 @@ class SessionManager
         if ( ! is_dir($path) OR ! is_writable($path)) {
             throw new \RuntimeException('no such directory or not writable: ' . $path);
         }
-        return $this->buildSession(new FileSessionHandler($this->filesystem, $path));
+        return $this->buildSession(new FileSessionHandler($this->filesystem, $path, 10080));
     }
 
     protected function createDatabaseDriver()
